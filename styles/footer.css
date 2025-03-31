@@ -1,0 +1,11 @@
+.footer__container {
+    height: 100px;
+    width: 100%;
+    padding-right: 25px;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--whiteBlue);
+    font-weight: 700;
+}

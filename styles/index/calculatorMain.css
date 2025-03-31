@@ -1,0 +1,79 @@
+.calculator__instance_body {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    padding: 40px;
+    background: linear-gradient(45deg, #fff1eb, #ace0f9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.calculator__data {
+    display: flex;
+    width: 100%;
+    
+    flex-direction: column;   
+    align-self: end;
+    
+}
+.calculator__data__output {  
+    border: none;    
+    resize: none;
+    outline: none;   
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 20px;
+    padding: 5px;
+}
+.calculator__data__input {
+    text-align: end;
+    border: none;
+    outline: none;
+    resize: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 20px;
+    padding: 5px;
+}
+.calculator__btn {
+    display: grid;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px 50px ;
+    margin-top: 20px;
+    gap: 10px;
+}
+.btn {
+    border-radius: 50%;    
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 36px;
+}
+.btn[data-operator] {
+  background-color: #2b6331;
+  color: var(--whiteBlue);
+}
+.btn[data-value] {
+  background-color: #f2b705;
+  color: var(--whiteBlue);
+}
+.fraction {
+    display: inline-block;
+    vertical-align: middle; 
+    margin: 0 0.2em 0.4ex;
+    text-align: center;
+    & > span{
+      display: block;
+      padding-top: 0.01em;
+    }
+    & span{
+      &.fdn{
+        border-top: thin solid black;
+      }
+      &.bar{
+        display: none;
+      }
+    }
+  }

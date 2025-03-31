@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/config.css">
+    <link rel="stylesheet" href="./styles/font.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/calcGCD(NOD)/main.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/menu.css"> 
+    <title>Калькулятор Наибольший общий делитель (НОД) онлайн</title>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <div class="header__container__content">
+                <div class="header__container__title">
+                    <div class="title__container">
+                        <img src="./img/calc.png" alt="calc">
+                        <h2 class="title__container_name">calculator-info</h2>
+                    </div>
+                </div>
+                <div class="header__container__menu">                    
+                    <div class="container__menu__burger" data-js-open-menu>                        
+                        <div class="burger"></div>
+                        <div class="burger"></div>
+                        <div class="burger"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main__container__calcGCD">
+            <div class="main__container__calcGCD__content">
+                <h3 class="main__container__calcGCD__title">Калькулятор НОД (Наибольший общий делитель)</h3>
+                <div class="main__container__calcGCD__calculator" data-js-calculator>
+                    <label>Введите числа через запятую</label>
+                    <textarea 
+                        name="calculatorGCD" 
+                        id="calculatorGCD" 
+                        class="main__container__calcGCD__calculator_style" 
+                        placeholder="1,2,3,4,5..."
+                        data-js-textarea>
+                    </textarea>   
+                    <div class="main__container__calcGCD__calculator__error" data-js-error></div>
+                    <button class="main__container__calcGCD__calculator__button" data-js-calcnok>Вычислить НОД</button> 
+                    <div class="main__container__calcGCD__calculator__result">
+                        Результат: НОД(<span data-js-numbers>...</span>) =
+                        <span data-js-answer>тут будет ответ</span></div>                
+                </div>
+                <div class="main__container__calcGCD__description">
+                    <h3>Что такое НОД (наибольший общий делитель)?</h3>
+                    <h4>Определение из <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B8%D0%B1%D0%BE%D0%BB%D1%8C%D1%88%D0%B8%D0%B9_%D0%BE%D0%B1%D1%89%D0%B8%D0%B9_%D0%B4%D0%B5%D0%BB%D0%B8%D1%82%D0%B5%D0%BB%D1%8C">Википедии</a></h4>
+                    <p>Наибольшим общим делителем (НОД) для двух целых чисел m и n называется наибольший из их общих делителей</p>                   
+                    <h4>Определение из <a href="https://foxford.ru/wiki/matematika/naibolshiy-obschiy-delitel?srsltid=AfmBOorxUzaYoN2xeoaullalffJ4lOU2KVvXadlYsyGhynxef8Mcn2Q9&utm_referrer=https%3A%2F%2Fwww.google.com%2F">foxford.ru</a></h4>
+                    <p>Наибольшим общим делителем двух натуральных чисел называют такое наибольшее натуральное число, на которое нацело делятся два данных числа. Если наибольший общий делитель двух натуральных чисел равен , то такие числа называют взаимно простыми.</p>
+                    
+                    <h4>Зачем нужно вычислять НОД</h4>
+                    <p>
+                        НОД помогает:
+                        <ul>
+                            <li>Упрощать большие дроби (для этого числитель и знаменатель деляться на НОД)</li>
+                            <li>Понимать состав числа и его взаимосвязь с другими числами</li>
+                            <li>Выявлять взаимосвязи между числами</li>
+                        </ul>
+                    </p>
+                    <h4>Как вычислить НОК: основные методы</h4>
+                    <p>Рассмотрим основные методы вычисления наименьшего общего кратного. найти наименьшее общее кратное можно как для двух чисел, так и для нескольких чисел.</p>
+                    <h5>1) Разложение на простые множители</h5>
+                    <p>Инструкция</p>
+                    <ul>
+                        <li>Нужно сначала разложить каждое число на простые множители</li>
+                        <li>Затем нужно выписать все общие множители</li>                        
+                        <li>Перемножить их</li>
+                    </ul>
+                    <p>Рассмотрим на примере:</p>
+                    <p>У нас есть два числа - 100 и 1200</p>
+                    <ul>
+                        <li>Раскладываем на множители, возводим каждый множитель в степень:<br>
+                            100 = 2 x 2 x 5 x 5 = 2<sup>2</sup> x 5 <sup>2</sup><br>                                
+                            1200 = 2 x 2 x 2 x 3 x 2 x 5 x 5 = 2<sup>4</sup> x 5<sup>2</sup> x 3
+                        </li>
+                        <li>В данном случае у нас общие множители это 2 и 5. У 2 минимальная степень - 2, у 5 - степень 2, 2<sup>2</sup>x5<sup>2</sup>= 100. НОД = 100 </li>                        
+                    </ul>
+                    <h5>2) Алгоритм Евклида</h5>
+                    <p>Способ помогает найти НОД через последовательное деление и заключается в том, что если большее из двух чисел делится на меньшее — наименьшее число и будет их наибольшим общим делителем.
+                        Формула нахождения наибольшего общего делителя согласно методу Евклида.
+                        НОД: НОД (a, b) = НОД (b, с), где с — остаток от деления a на b. 
+                    </p>
+                    <p>Инструкция</p>
+                    <ul>                        
+                        <li>Разделить большее число на меньшее</li>
+                        <li>Меньшее число разделить на остаток, который получился после деления</li>
+                        <li>Остаток первого деления разделить на остаток второго деления</li>
+                        <li>Продолжать деление, пока в остатке не останется нуль. Последний делитель и будет наибольшим общим делителем</li>
+                    </ul>
+                    <p>Пример: у нас есть числа 150 и 32</p>
+                    <ul>
+                        <li> 150 : 32 = 4 (остаток 22) </li>
+                        <li> 32 : 22 = 1 (остаток 10) </li>
+                        <li> 22 : 10 = 2 (остаток 2)</li>
+                        <li> 10 : 2 = 5 (остаток 0)</li>                            
+                    </ul>
+                    <p>Последний делитель - 2, Значит ответ - НОД = 2</p>
+                    <p>Чтобы найти НОД нескольких чисел нужно двигаться в такой последовательности</p>
+                    <ul>
+                        <li>Найти НОД двух первых чисел из набора</li>
+                        <li>Найти НОД найденного делителя и третьего числа</li>
+                        <li>Далее найти НОД найденного делителя и четвертого числа и т. д</li>
+                    </ul>                    
+                </div>
+            </div>
+        </div>        
+    </main>
+    <footer>
+        <div class="footer__container">
+            <p>© calculator-info.ru, 2025. Все права защищены</p>
+        </div>
+    </footer>
+    <div class="menu__container" data-js-menu> 
+        <div class="menu__close" data-js-close-menu>
+            <img src="./img/close.png" alt="close">
+        </div>
+        <div class="menu__list">
+            <p class="menu__list__title">Каталог онлайн калькуляторов</p>
+            <nav class="menu__list__item">
+                <ul class="list__item">
+                    <li class="list__item__calc">Математические</li>
+                    <li class="list__item__calc">Финансовые</li>
+                    <li class="list__item__calc">Конвертеры единиц измерения</li>
+                    <li class="list__item__calc">Калькуляторы для здоровья</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+   <!-- <script src="./scripts/calculatorMain.js"></script> -->
+    <script src="./scripts/calcMath/calcGCD(NOD).js"></script> 
+    <script src="./scripts/openCloseMenu.js"></script>   
+</body>
+</html>
