@@ -16,26 +16,53 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+.main__container__calcPercent__section {
+    display: flex;    
+    gap: 30px;  
+    margin-bottom: 20px;
+}
 .main__container__calcPercent__calculator {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    width: 30%;
+    width: 30%;    
     gap: 10px;
-    margin-bottom: 20px;
+    
+}
+.main__container__calcPercent__result {  
+    border-radius: 30px;
+    background-color: var(--lightBlue);
+    width: 300px;
+    padding: 30px;
+    color: var(--whiteBlue);
 }
 .main__container__calcPercent__calculator__select {
     height: 35px;
 }
 .main__container__calcPercent__calculator__inputs {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 .main__container__calcPercent__calculator__value {
     height: 35px;
     padding: 10px;
     font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 .main__container__calcPercent__calculator__button {
     width: 200px;
     height: 35px;
+    background-color: var(--lightBlue);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.main__container__title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.main__container__list {
+    list-style-type: none;
 }

@@ -10,6 +10,7 @@
     --whiteBlue: #F9F9FF;
     --blue: #3432C4;
     --lightSteelBlue: #B0C4DE;
+    --lightBlue: rgb(82, 155, 238);
 }
 body {
     position: relative;

@@ -35,82 +35,100 @@
         <div class="main__container__calcPercent">
             <div class="main__container__calcPercent__content">
                 <h3 class="main__container__calcPercent__title">Калькулятор процентов</h3>
-                <div class="main__container__calcPercent__calculator" data-js-calculator>
-                  <select name="percentage" class="main__container__calcPercent__calculator__select" data-js-select>
-                    <option value="type1">Нахождение процента от числа</option>
-                    <option value="type2">Нахождение процентов числа от числа</option>
-                    <option value="type3">Увеличение числа на процент</option>
-                    <option value="type4">Уменьшение числа на процент</option>
-                    <option value="type5">На сколько процентов одно число больше другого</option>
-                    <option value="type6">На сколько процентов одно число меньше другого</option>
-                  </select>
-                  <p>Введите значения</p> 
-                  <div class="main__container__calcPercent__calculator__inputs">
-                    <input class="main__container__calcPercent__calculator__value" 
-                         type="text" 
-                         placeholder="процент"
-                         data-js-input1
-                         />       
-                    <span data-js-span>от</span>           
-                    <input class="main__container__calcPercent__calculator__value" 
-                         type="text" 
-                         placeholder="числа"
-                         data-js-input2
-                         />                    
-                  </div>          
-                    <div>Округлить до скольки знаков после запятой?</div>    
-                    <div>
-                        <select name="round" class="main__container__calcPercent__calculator__select" data-js-round>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
+                <div class="main__container__calcPercent__section">
+                    <div class="main__container__calcPercent__calculator" data-js-calculator>
+                        <select name="percentage" class="main__container__calcPercent__calculator__select" data-js-select>
+                          <option value="type1">Нахождение процента от числа</option>
+                          <option value="type2">Нахождение процентов числа от числа</option>
+                          <option value="type3">Увеличение числа на процент</option>
+                          <option value="type4">Уменьшение числа на процент</option>
+                          <option value="type5">На сколько процентов одно число больше другого</option>
+                          <option value="type6">На сколько процентов одно число меньше другого</option>
                         </select>
-                    </div>
-                    <button class="main__container__calcPercent__calculator__button" data-js-calcpercent>Вычислить процент</button>     
-                    <div>Результат:<span data-js-result></span></div>
+                        <p>Введите значения</p> 
+                        <div class="main__container__calcPercent__calculator__inputs">
+                          <input class="main__container__calcPercent__calculator__value" 
+                               type="text" 
+                               placeholder="процент"
+                               data-js-input1
+                               />       
+                          <span data-js-span>от</span>           
+                          <input class="main__container__calcPercent__calculator__value" 
+                               type="text" 
+                               placeholder="числа"
+                               data-js-input2
+                               />                    
+                        </div>          
+                          <div>Округлить до скольки знаков после запятой?</div>    
+                          <div>
+                              <select name="round" class="main__container__calcPercent__calculator__select" data-js-round>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                  <option value="10">10</option>
+                              </select>
+                          </div>
+                          <button class="main__container__calcPercent__calculator__button" data-js-calcpercent>Вычислить процент</button>     
+                          
+                      </div>
+                      <div class="main__container__calcPercent__result">
+                        <div>Результат:<span data-js-result></span></div>
+                      </div>
                 </div>
-                <div class="main__container__calcLCM__description">
-                    <h3>Что такое процент</h3>
-                    <h4>Определение из <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D0%BD%D1%82">Википедии</a></h4>
-                    <p>Процент - одна сотая часть; обозначается знаком «%»; используется для обозначения доли чего-либо по отношению к целому.</p>
-                    <h4>Определение из <a href="https://www.banki.ru/wikibank/chto_takoe_protsent/">Банки.ру</a></h4>
-                    <p>Процент (%) – это сотая часть чего-либо. В процентах часто измеряется изменение каких-либо показателей, которые сами по себе выражаются в других величинах.</p>
-                    <h3>Как считать процент от числа</h3>
-                    <p>Для того, чтобы посчитать процент от числа нужно умножить число на процент и разделить результат на 100.</p>
-                    <p>Например, 30% от 150 = (150 x 30)/100 = 45</p>
-                    <h3>Как найти процент числа от числа</h3>
-                    <p>Чтобы посчитать процент числа от числа нужно одно число разделить на другое и ответ умножить на 100</p>
-                    <p>Например, надо найти сколько процентов число 30 составляет от числа 120: (30 / 120) x 100% = 25%</p>
-                    <h3>Как увеличить число на процент</h3>
-                    <p>Прибавить процент к числу - означает увеличить исходное число на заданный процент от него.</p>
-                    <p>Например, у нас есть число 120, и его нужно увеличить на 30%. Порядок вычислений следующий:</p>
-                    <ul>
-                        <li>Найдем 30% от 120: (120 x 30) / 100 = 36</li>
-                        <li>Полученное число прибавляем к 120: 120 + 36 = 156</li>                        
-                    </ul>
-                    <h3>Как уменьшить число на процент</h3>
-                    <p>Вычесть процент из числа - означает уменьшить исходное число на заданный процент от него.</p>
-                    <p>Например, у нас есть число 120, и его нужно уменьшить на 30%. Порядок вычислений следующий:</p>
-                    <ul>
-                        <li>Найдем 30% от 120: (120 x 30) / 100 = 36</li>
-                        <li>От 120 отнимаем полученное число: 120 - 36 = 84</li>                        
-                    </ul>
-                    <h3>Как узнать, насколько процентов одно число больше другого</h3>
-                    <p>Чтобы вычислить, на сколько процентов одно число больше другого, нужно первое число разделить на второе, умножить результат на 100 и вычесть 100.</p>
-                    <p>Например, на сколько процентов 120 больше 30: ((120/30) x 100) - 100 = 300%</p>
-                    <h3>Как узнать, насколько процентов одно число меньше другого</h3>
-                    <p>Чтобы вычислить, на сколько процентов одно число меньше другого, нужно первое число разделить на второе, умножить результат на 100 и вычесть из 100.</p>
-                    <p>Например, на сколько процентов 120 больше 30: 100 - ((30/120) x 100) = 300% \frac{1}{2}</p>
-                    When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+                
+                <div class="main__container__calcLCM__description">  
+                    <article>
+                        <h3>Что такое процент</h3>
+                        <h4 class="main__container__title">Определение из <a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D0%BD%D1%82">Википедии</a></h4>
+                            <p>Процент - одна сотая часть; обозначается знаком «%»; используется для обозначения доли чего-либо по отношению к целому.</p>
+                        <h4 class="main__container__title">Определение из <a href="https://www.banki.ru/wikibank/chto_takoe_protsent/">Банки.ру</a></h4>
+                            <p>Процент (%) – это сотая часть чего-либо. В процентах часто измеряется изменение каких-либо показателей, которые сами по себе выражаются в других величинах.</p>
+                    </article>                  
+                    <article>
+                        <h3 class="main__container__title">Как считать процент от числа</h3>
+                            <p>Для того, чтобы посчитать процент от числа нужно умножить число на процент и разделить результат на 100.</p>
+                            <p>Например, 30% от 150  $$\mathcal{{ 150 \cdot 30\% \over 100} = 45}$$</p>
+                    </article>
+                    <article>
+                        <h3 class="main__container__title">Как найти процент числа от числа</h3>
+                            <p>Чтобы посчитать процент числа от числа нужно одно число разделить на другое и ответ умножить на 100</p>
+                            <p>Например, надо найти сколько процентов число 30 составляет от числа 120: $$\mathcal{{ \frac{30}{120} \cdot 100\% } = 25\%}$$</p>
+                    </article>
+                    <article>
+                        <h3 class="main__container__title">Как увеличить число на процент</h3>
+                             <p>Прибавить процент к числу - означает увеличить исходное число на заданный процент от него.</p>
+                             <p>Например, у нас есть число 120, и его нужно увеличить на 30%. Порядок вычислений следующий:</p>
+                             <ul class="main__container__list">
+                                <li class="main__container__list__item">Найдем 30% от 120: $$\mathcal{{ 120 \cdot 30\% \over 100} = 36}$$</li>
+                                <li class="main__container__list__item">Полученное число прибавляем к 120: 120 + 36 = 156</li>                        
+                            </ul>
+                    </article>
+                    <article>
+                        <h3 class="main__container__title">Как уменьшить число на процент</h3>
+                        <p>Вычесть процент из числа - означает уменьшить исходное число на заданный процент от него.</p>
+                        <p>Например, у нас есть число 120, и его нужно уменьшить на 30%. Порядок вычислений следующий:</p>
+                        <ul class="main__container__list">
+                            <li class="main__container__list__item">Найдем 30% от 120: $$\mathcal{{ 120 \cdot 30\% \over 100} = 36}$$</li>
+                            <li class="main__container__list__item">От 120 отнимаем полученное число: 120 - 36 = 84</li>                        
+                        </ul>   
+                    </article>
+                    <article>
+                        <h3 class="main__container__title">Как узнать, насколько процентов одно число больше другого</h3>
+                            <p>Чтобы вычислить, на сколько процентов одно число больше другого, нужно первое число разделить на второе, умножить результат на 100 и вычесть 100.</p>
+                            <p>Например, на сколько процентов 120 больше 30: $$\mathcal{{ (\frac{120}{30} \cdot 100) - 100} = 300\%}$$</p>
+                    </article>
+                    <article>
+                        <h3 class="main__container__title">Как узнать, насколько процентов одно число меньше другого</h3>
+                            <p>Чтобы вычислить, на сколько процентов одно число меньше другого, нужно первое число разделить на второе, умножить результат на 100 и вычесть из 100.</p>
+                        <p>Например, на сколько процентов 120 меньше 30: $$\mathcal{100 - { (\frac{30}{120} \cdot 100)} = 75\%}$$</p>
+                    </article>                   
                 </div>
             </div>
         </div>        
