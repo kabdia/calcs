@@ -35,20 +35,23 @@
         <div class="main__container__calcGCD">
             <div class="main__container__calcGCD__content">
                 <h3 class="main__container__calcGCD__title">Калькулятор НОД (Наибольший общий делитель)</h3>
-                <div class="main__container__calcGCD__calculator" data-js-calculator>
-                    <label>Введите числа через запятую</label>
-                    <textarea 
-                        name="calculatorGCD" 
-                        id="calculatorGCD" 
-                        class="main__container__calcGCD__calculator_style" 
-                        placeholder="1,2,3,4,5..."
-                        data-js-textarea>
-                    </textarea>   
-                    <div class="main__container__calcGCD__calculator__error" data-js-error></div>
-                    <button class="main__container__calcGCD__calculator__button" data-js-calcnok>Вычислить НОД</button> 
+                <div class="main__container__calcGCD__section">
+                    <div class="main__container__calcGCD__calculator" data-js-calculator>
+                        <label>Введите числа через запятую</label>
+                        <textarea 
+                            name="calculatorGCD" 
+                            id="calculatorGCD" 
+                            class="main__container__calcGCD__calculator_style" 
+                            placeholder="1,2,3,4,5..."
+                            data-js-textarea>
+                        </textarea>   
+                        <div class="main__container__calcGCD__calculator__error" data-js-error></div>
+                        <button class="main__container__calcGCD__calculator__button" data-js-calcnok>Вычислить НОД</button> 
+                                      
+                    </div>
                     <div class="main__container__calcGCD__calculator__result">
                         Результат: НОД(<span data-js-numbers>...</span>) =
-                        <span data-js-answer>тут будет ответ</span></div>                
+                        <span data-js-answer>тут будет ответ</span></div>  
                 </div>
                 <div class="main__container__calcGCD__description">
                     <h3>Что такое НОД (наибольший общий делитель)?</h3>

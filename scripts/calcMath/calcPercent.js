@@ -32,6 +32,7 @@ class CalcPercent {
         if (!this.button) {
             return
         }
+        this.error = document.querySelector(InteractiveCalculatorPercentCollection.selectors.error);
         this.placeholders = {
             'type1': ['процент','от','числа'],
             'type2': ['число 1', 'от', 'число 2'],
@@ -47,6 +48,7 @@ class CalcPercent {
         this.doChoice();
         this.doCalc();
         this.numRound = this.setNumRoundResult();
+        this.validationInput(this.input1, this.input2);        
    }
    doChoice() {
         this.select.addEventListener('change', (e) => {            
@@ -68,6 +70,8 @@ class CalcPercent {
    }   
    doCalc() {
     this.button.addEventListener('click', () => {
+        
+       
         const valueSelect = this.select.value;
         this.result.innerHTML = '';
         switch (valueSelect) {
@@ -144,9 +148,23 @@ class CalcPercent {
     this.selectRound.addEventListener('change', (e) => {
         this.numRound = e.target.value;
         return e.target.value;        
-    });
-    
+    });    
    }
+   validationInput(input1, input2) {
+    
+    const inputs = [input1, input2];
+    for (const input of inputs) {
+        input.addEventListener('input', () => {
+            const validChars = /^[0-9,\s]*$/;
+
+            if (!validChars.test(input1.value) || !validChars.test(input2.value)) {                
+                this.error.innerHTML = "Недопустимый символ";                            
+            } else {            
+                this.error.innerHTML = '';                
+            }
+        });
+    }    
+}
 }
 
 class InteractiveCalculatorPercentCollection {
@@ -158,7 +176,8 @@ class InteractiveCalculatorPercentCollection {
         selectRound: "[data-js-round]",
         span: "[data-js-span]",
         result: "[data-js-result]",
-        button: "[data-js-calcpercent]"
+        button: "[data-js-calcpercent]",
+        error: "[data-js-error]",
     }
     constructor() {
         document.querySelectorAll(InteractiveCalculatorPercentCollection.selectors.instance).forEach(node => {
