@@ -72,16 +72,17 @@
 .main__container__calcPercent__calculator__button:hover {
     background-color: var(--darkBlue);
 }
-.main__container__calcPercent__result__title {
-    font-size: 24px;
+.main__container__calcPercent__result__title {   
+    font-size: 24px;    
 }
 .main__container__title {    
-    margin-bottom: 20px;    
+    margin-bottom: 20px;  
+    margin-top: 20px;   
 }
 .main__container__list {
     list-style-type: none;
 }
-.main__container__calcLCM__description__article {
+.main__container__calcPercent__description__article {
     width: 100%;
     padding: 20px;
     background-color: var(--lightBlue);
@@ -89,10 +90,11 @@
     margin-top: 20px;
     color:var(--whiteBlue);
 }
-.main__container__calcLCM__description__article__title {
+.main__container__calcPercent__description__article__title {
     color: var(--darkBlue);
     padding-bottom: 20px;
 }
+
 @media screen and (max-width: 812px) {
     .main__container__calcPercent__section {
         flex-direction: column;

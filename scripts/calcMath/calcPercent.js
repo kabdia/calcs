@@ -158,9 +158,11 @@ class CalcPercent {
             const validChars = /^[0-9,\s]*$/;
 
             if (!validChars.test(input1.value) || !validChars.test(input2.value)) {                
-                this.error.innerHTML = "Недопустимый символ";                            
+                this.error.innerHTML = "Недопустимый символ";
+                this.button.disabled = true;                            
             } else {            
-                this.error.innerHTML = '';                
+                this.error.innerHTML = '';    
+                this.button.disabled = false;            
             }
         });
     }    
