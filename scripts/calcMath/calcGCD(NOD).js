@@ -56,7 +56,7 @@ class CalcNod {
             const arrFilter = strNums.split(',').filter((num) => num !== '0');                  
             const arrNums = arrFilter.map((elem) => Number(elem.trim()));
             const resStrNums = arrNums.filter((num) => num != '');
-            console.log(strNums,arrFilter, arrNums)
+            
             if (resStrNums.length < 2) {
                 this.validation();
                 return;

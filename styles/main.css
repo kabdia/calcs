@@ -44,6 +44,9 @@
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 100px;
+    padding: 20px;
+    background-color: var(--lightBlue);
+    border-radius: 20px;    
 }
 .container__content__navigation__item__title {
     padding-bottom: 20px;
@@ -51,13 +54,15 @@
 .container__content__navigation__item__link {
     list-style-type: none;
     padding-bottom: 10px;
+    font-weight: 600;    
 }
 .container__content__navigation__item__link_style {
-    text-decoration: none;
-    color: black;
+    text-decoration: none;   
+    color: var(--whiteBlue);
+    transition: color .5s linear;
 }
 .container__content__navigation__item__link_style:hover {
-    color: var(--blue);
+    color: var(--black);
 }
 @media screen and (max-width: 360px) {
     .content__description_title  {

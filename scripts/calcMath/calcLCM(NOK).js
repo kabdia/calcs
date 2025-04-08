@@ -53,19 +53,20 @@ class CalcNok {
                 return;
             };
             const strNums = this.textarea.value;
-            const arrFilter = strNums.split(',').filter((num) => num !== '0');      
+            const arrFilter = strNums.split(',').filter((num) => num !== '0');                  
             const arrNums = arrFilter.map((elem) => Number(elem.trim()));
-            console.debug(arrNums);
+            const resStrNums = arrNums.filter((num) => num != '');
+            
             if (arrNums.length < 2) {
                 this.validation();
                 return;
             };
-            let result = arrNums[0];
-            for (let i = 1; i < arrNums.length; i++) {
-                result = this.calcNok(result,arrNums[i]);
+            let result = resStrNums[0];
+            for (let i = 1; i < resStrNums.length; i++) {
+                result = this.calcNok(result,resStrNums[i]);
             }
             this.numbersField.innerHTML = '';        
-            this.numbersField.innerHTML = arrNums.join(',');
+            this.numbersField.innerHTML = resStrNums.join(',');
                    
             this.answer.innerHTML = '';
             this.answer.innerHTML = result;

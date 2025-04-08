@@ -14,6 +14,7 @@
     --gradientBlue: linear-gradient(90deg, var(--lightBlue) 0%, #000851 100%);
     --darkBlue: #000851;
     --red: #ff0000;
+    --black: #000;
 }
 body {
     position: relative;

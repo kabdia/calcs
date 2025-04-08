@@ -19,9 +19,9 @@
 .main__container__calcGCD__section {
     display: flex;    
     gap: 30px;  
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;    
 }
+
 .main__container__calcGCD__calculator {
     display: flex;    
     width: 50%;
@@ -64,14 +64,7 @@
 .main__container__calcGCD__calculator__result__title {
     font-size: 24px;
 }
-.main__container__calcGCD__description__article {
-    width: 100%;
-    padding: 20px;
-    background-color: var(--lightBlue);
-    border-radius: 20px;
-    margin-top: 20px;
-    color:var(--whiteBlue);
-}
+ 
 .main__container__calcGCD__description__article__title {
     color: var(--darkBlue);
     padding-bottom: 20px;
@@ -97,6 +90,14 @@
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 20px;
+}
+.main__container__calcGCD__description__article {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--lightBlue);
+    border-radius: 20px;
+    margin-top: 20px;
+    color:var(--whiteBlue);
 }
 .main__container__calcGCD__description__article__example {    
     width: 100%;

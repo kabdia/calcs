@@ -18,7 +18,9 @@
                 <div class="header__container__title">
                     <div class="title__container">
                         <img src="./img/calc.png" alt="calc">
-                        <h2 class="title__container_name">calculator-info</h2>
+                        <h2 class="title__container_name">
+                            <a href="index.html">calculator-info</a>
+                        </h2>
                     </div>
                 </div>
                 <div class="header__container__menu">                    
@@ -35,75 +37,93 @@
         <div class="main__container__calcLCM">
             <div class="main__container__calcLCM__content">
                 <h3 class="main__container__calcLCM__title">Калькулятор НОК (Наименьшее общее кратное)</h3>
-                <div class="main__container__calcLCM__calculator" data-js-calculator>
-                    <label>Введите числа через запятую</label>
-                    <textarea 
-                        name="calculatorLCM" 
-                        id="calculatorLCM" 
-                        class="main__container__calcLCM__calculator_style" 
-                        placeholder="1,2,3,4,5..."
-                        data-js-textarea>
-                    </textarea>   
-                    <div class="main__container__calcLCM__calculator__error" data-js-error></div>
-                    <button class="main__container__calcLCM__calculator__button" data-js-calcnok>Вычислить НОК</button> 
+                <div class="main__container__calcLCM__section">
+                    <div class="main__container__calcLCM__calculator" data-js-calculator>
+                        <label>Введите числа через запятую</label>
+                        <textarea 
+                            name="calculatorLCM" 
+                            id="calculatorLCM" 
+                            class="main__container__calcLCM__calculator_style" 
+                            placeholder="1,2,3,4,5..."
+                            data-js-textarea>
+                        </textarea>   
+                        <div class="main__container__calcLCM__calculator__error" data-js-error></div>
+                        <button class="main__container__calcLCM__calculator__button" data-js-calcnok>Вычислить НОК</button>                                       
+                    </div>
                     <div class="main__container__calcLCM__calculator__result">
-                        Результат: НОК(<span data-js-numbers>...</span>) =
-                        <span data-js-answer>тут будет ответ</span></div>                
+                        <div class="main__container__calcLCM__calculator__result__title">
+                            Результат:<br> НОК(<span data-js-numbers>...</span>) =
+                            <span data-js-answer>тут будет ответ</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="main__container__calcLCM__description">
-                    <h3>Что такое НОК (наименьшее общее кратное)?</h3>
-                    <h4>Определения из <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5_%D0%BE%D0%B1%D1%89%D0%B5%D0%B5_%D0%BA%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5#:~:text=%D0%9D%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5%20%D0%BE%D0%B1%D1%89%D0%B5%D0%B5%20%D0%BA%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%B8%D1%85,%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B5%20%D0%B8%D0%B7%20%D1%8D%D1%82%D0%B8%D1%85%20%D1%87%D0%B8%D1%81%D0%B5%D0%BB.">Википедии</a></h4>
-                    <p>1) Наименьшее общее кратное (НОК) двух целых чисел m и n есть наименьшее натуральное число, которое делится на m и n без остатка, то есть кратно им обоим.</p> 
-                    <p>2) Наименьшее общее кратное для нескольких чисел — это наименьшее натуральное число, которое делится на каждое из этих чисел.</p>
-                    <h4>Определение из <a href="https://foxford.ru/wiki/matematika/naimenshee-obschee-kratnoe?srsltid=AfmBOoqP4U1P-593cUHSOxCWHUMs-tTBebc4mwmeZoAcvIc22nPbETk2&utm_referrer=https%3A%2F%2Fwww.google.com%2F">foxford.ru</a></h4>
-                    <p>Наименьшим общим кратным двух натуральных чисел называют такое наименьшее натуральное число, которое нацело делится на каждое из данных двух чисел. </p>
-                    
-                    <h4>Зачем нужно вычислять НОК</h4>
-                    <p>
+                    <article  class="main__container__calcLCM__description__article">
+                        <h3 class="main__container__calcLCM__description__article__title">Что такое НОК (наименьшее общее кратное)?</h3>
+                        <h4 class="main__container__title">Определения из <a rel="nofollow" href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5_%D0%BE%D0%B1%D1%89%D0%B5%D0%B5_%D0%BA%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5#:~:text=%D0%9D%D0%B0%D0%B8%D0%BC%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%D0%B5%20%D0%BE%D0%B1%D1%89%D0%B5%D0%B5%20%D0%BA%D1%80%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%B8%D1%85,%D0%BD%D0%B0%20%D0%BA%D0%B0%D0%B6%D0%B4%D0%BE%D0%B5%20%D0%B8%D0%B7%20%D1%8D%D1%82%D0%B8%D1%85%20%D1%87%D0%B8%D1%81%D0%B5%D0%BB.">Википедии</a></h4>
+                        <p>1) Наименьшее общее кратное (НОК) двух целых чисел m и n есть наименьшее натуральное число, которое делится на m и n без остатка, то есть кратно им обоим.</p> 
+                        <p>2) Наименьшее общее кратное для нескольких чисел — это наименьшее натуральное число, которое делится на каждое из этих чисел.</p>
+                        <h4 class="main__container__title">Определение из <a rel="nofollow" href="https://foxford.ru/wiki/matematika/naimenshee-obschee-kratnoe?srsltid=AfmBOoqP4U1P-593cUHSOxCWHUMs-tTBebc4mwmeZoAcvIc22nPbETk2&utm_referrer=https%3A%2F%2Fwww.google.com%2F">foxford.ru</a></h4>
+                        <p>Наименьшим общим кратным двух натуральных чисел называют такое наименьшее натуральное число, которое нацело делится на каждое из данных двух чисел. </p>
+                    </article>
+                    <article class="main__container__calcLCM__description__article">
+                        <h4 class="main__container__calcLCM__description__article__title">Зачем нужно вычислять НОК</h4>
+                        <p>
                         НОК помогает:
-                        <ul>
-                            <li>Приводить дроби к общему знаменателю</li>
-                            <li>Решать задачи на повторение событий (например, когда два автобуса отправляются с интервалами 15 и 20 минут, и нужно узнать, через какое время они снова отправятся одновременно)</li>
-                            <li>Упрощать алгебраические выражения</li>
+                            <ol class="main__container__list">
+                                <li class="main__container__list__item">Приводить дроби к общему знаменателю</li>
+                                <li class="main__container__list__item">Решать задачи на повторение событий (например, когда два автобуса отправляются с интервалами 15 и 20 минут, и нужно узнать, через какое время они снова отправятся одновременно)</li>
+                                <li class="main__container__list__item">Упрощать алгебраические выражения</li>
+                            </ol>
+                        </p>
+                    </article>
+                    <article  class="main__container__calcLCM__description__article">
+                        <h4 class="main__container__calcLCM__description__article__title">Как вычислить НОК: основные методы</h4>
+                        <p>Рассмотрим основные методы вычисления наименьшего общего кратного. найти наименьшее общее кратное можно как для двух чисел, так и для нескольких чисел.</p>
+                        <h4 class="main__container__title">1) Разложение на простые множители</h4>
+                        <p>Инструкция</p>
+                        <ul class="main__container__list">
+                            <li class="main__container__list__item">Нужно сначала разложить каждое число на простые множители</li>
+                            <li class="main__container__list__item">Затем нужно выписать все простые множители, входящие хотя бы в одно из чисел</li>
+                            <li class="main__container__list__item">Каждый из взятых множителей необходимо возвести в наибольшую из тех степеней, с которыми он входит в данные числа</li>
+                            <li class="main__container__list__item">Произвести умножение</li>
                         </ul>
-                    </p>
-                    <h4>Как вычислить НОК: основные методы</h4>
-                    <p>Рассмотрим основные методы вычисления наименьшего общего кратного. найти наименьшее общее кратное можно как для двух чисел, так и для нескольких чисел.</p>
-                    <h5>1) Разложение на простые множители</h5>
-                    <p>Инструкция</p>
-                    <ul>
-                        <li>Нужно сначала разложить каждое число на простые множители</li>
-                        <li>Затем нужно выписать все простые множители, входящие хотя бы в одно из чисел</li>
-                        <li>Каждый из взятых множителей необходимо возвести в наибольшую из тех степеней, с которыми он входит в данные числа</li>
-                        <li>Произвести умножение</li>
-                    </ul>
-                    <p>Рассмотрим на примере:</p>
-                    <p>У нас есть три числа - 100, 513, 1200</p>
-                    <ul>
-                        <li>Раскладываем на множители, возводим каждый множитель в степень:<br>
-                            100 = 2 x 2 x 5 x 5 = 2<sup>2</sup> x 5 <sup>2</sup><br>
-                            513 = 3 x 3 x 3 x 19 = 3<sup>3</sup> x 19<br>
-                            1200 = 2 x 2 x 2 x 3 x 2 x 5 x 5 = 2<sup>4</sup> x 5<sup>2</sup> x 3
-                        </li>
-                        <li>Видим, что среди множителей у нас следующие числа: 2, 3, 5, 19. Выбираем для них самые высокие степени, которые есть в разложениях. У 2 самая большая степень - 4, у 3 - степень 3, у 5 - степень 2, число 19 записываем как есть</li>
-                        <li>Считаем 2<sup>4</sup> x 3<sup>3</sup> x 5 <sup>2</sup> x 19 = 205 200. Наш ответ - 205 200</li>
-                    </ul>
-                    <h5>2) Вычисление НОК через НОД (способ для 2 чисел)</h5>
-                    <p>Инструкция</p>
-                    <ul>
-                        <li>Сначала найдем НОД чисел</li>
-                        <li>Перемножим исходные числа и разделим результат на НОД</li>
-                        <p>Рассмотрим на примере</p>
-                        <p>У нас есть два числа - 100, 1200</p>
-                        <ul>
-                            <li>Найдем НОД. Раскладываем на множители, возводим каждый множитель в степень:<br>
-                                100 = 2 x 2 x 5 x 5 = 2<sup>2</sup> x 5 <sup>2</sup><br>                                
-                                1200 = 2 x 2 x 2 x 3 x 2 x 5 x 5 = 2<sup>4</sup> x 5<sup>2</sup> x 3
-                            </li>
-                            <li>В данном случае у нас общие множители это 2 и 5. У 2 минимальная степень - 2, у 5 - степень 2, 2<sup>2</sup>x5<sup>2</sup>= 100. НОД = 100</li>
-                            <li>Перемножим исходные числа и разделим на 1 - (100 x 1200) / 100 = 1200</li>
+                        <div class="main__container__calcLCM__description__article__example">
+                            <p class="main__container__calcLCM__description__article__title">Рассмотрим на примере:</p>           
+                            <ul class="main__container__list">
+                                <li class="main__container__list__item">У нас есть три числа - 100, 513, 1200</li>
+                                <li class="main__container__list__item">Раскладываем на множители, возводим каждый множитель в степень:
+                                    <div class="main__container__formulas">
+                                        100 = 2 x 2 x 5 x 5 = 2<sup>2</sup> x 5 <sup>2</sup><br>
+                                        513 = 3 x 3 x 3 x 19 = 3<sup>3</sup> x 19<br>
+                                        1200 = 2 x 2 x 2 x 3 x 2 x 5 x 5 = 2<sup>4</sup> x 5<sup>2</sup> x 3
+                                    </div>
+                                </li>
+                                <li class="main__container__list__item">Видим, что среди множителей у нас следующие числа: 2, 3, 5, 19. Выбираем для них самые высокие степени, которые есть в разложениях. У 2 самая большая степень - 4, у 3 - степень 3, у 5 - степень 2, число 19 записываем как есть</li>
+                                <li class="main__container__list__item">Считаем 2<sup>4</sup> x 3<sup>3</sup> x 5 <sup>2</sup> x 19 = 205 200. Наш ответ - 205 200</li>
+                            </ul>
+                        </div>
+                        <h4 class="main__container__title">2) Вычисление НОК через НОД (способ для 2 чисел)</h4>
+                        <p>Инструкция</p>
+                        <ul class="main__container__list">
+                            <li class="main__container__list__item">Сначала найдем НОД чисел</li>
+                            <li class="main__container__list__item">Перемножим исходные числа и разделим результат на НОД</li>
                         </ul>
-                    </ul>
+                        <div class="main__container__calcLCM__description__article__example">
+                            <p class="main__container__calcLCM__description__article__title">Рассмотрим на примере</p>                            
+                            <ul class="main__container__list">
+                                <li>У нас есть два числа - 100, 1200</li>
+                                <li class="main__container__list__item">Найдем НОД. Раскладываем на множители, возводим каждый множитель в степень:
+                                    <div class="main__container__formulas">
+                                        100 = 2 x 2 x 5 x 5 = 2<sup>2</sup> x 5 <sup>2</sup><br>                                
+                                        1200 = 2 x 2 x 2 x 3 x 2 x 5 x 5 = 2<sup>4</sup> x 5<sup>2</sup> x 3
+                                    </div>
+                                </li>
+                                <li class="main__container__list__item">В данном случае у нас общие множители это 2 и 5. У 2 минимальная степень - 2, у 5 - степень 2, 2<sup>2</sup>x5<sup>2</sup>= 100. НОД = 100</li>
+                                <li class="main__container__list__item">Перемножим исходные числа и разделим на 1 - (100 x 1200) / 100 = 1200</li>
+                            </ul>
+                        </div>
+                    </article>                    
                 </div>
             </div>
         </div>        

@@ -16,13 +16,19 @@
 .main__container__calcLCM__title {
     padding-bottom: 20px;
 }
+.main__container__calcLCM__section {
+    display: flex;    
+    gap: 30px;  
+    margin-bottom: 20px;    
+}
 .main__container__calcLCM__calculator {
-    display: flex;
+    display: flex;    
+    width: 50%;
     flex-direction: column;
     gap: 20px;
 }
 .main__container__calcLCM__calculator_style {
-    width: 50%;
+    width: 100%;
     resize: none;
     padding: 10px;
     height: 100px;
@@ -35,4 +41,70 @@
 .main__container__calcLCM__calculator__button {
     width: 200px;
     height: 35px;
+    background-color: var(--lightBlue);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--whiteBlue);
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color .5s linear;
+}
+.main__container__calcLCM__calculator__button:hover {
+    background-color: var(--darkBlue);
+}
+.main__container__calcLCM__calculator__result {
+    border-radius: 30px;
+    background: var(--gradientBlue);
+    width: 300px;
+    padding: 20px;
+    color: var(--whiteBlue);
+}
+.main__container__calcLCM__calculator__result__title {
+    font-size: 24px;
+}
+.main__container__calcLCM__description__article {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--lightBlue);
+    border-radius: 20px;
+    margin-top: 20px;
+    color:var(--whiteBlue);
+}
+ 
+.main__container__calcLCM__description__article__title {
+    color: var(--darkBlue);
+    padding-bottom: 20px;
+}
+.main__container__title {
+    margin-bottom: 20px;  
+    margin-top: 20px;  
+}
+.main__container__list {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+.main__container__list__item {
+    margin-top: 10px;
+}
+.main__container__list__item:last-child {
+    margin-bottom: 10px;
+}
+.main__container__calcLCM__description__article__example {    
+    width: 100%;
+    padding:10px;
+    background-color: var(--whiteBlue);
+    color: var(--lightBlue);
+    font-weight: bold;
+    border-radius: 20px;    
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main__container__formulas {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
 }
