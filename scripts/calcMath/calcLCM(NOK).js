@@ -57,7 +57,7 @@ class CalcNok {
             const arrNums = arrFilter.map((elem) => Number(elem.trim()));
             const resStrNums = arrNums.filter((num) => num != '');
             
-            if (arrNums.length < 2) {
+            if (resStrNums.length < 2) {
                 this.validation();
                 return;
             };
