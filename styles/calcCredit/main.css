@@ -1,0 +1,102 @@
+.main__container__calcCredit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    padding-bottom: 45px; 
+}
+
+.main__container__calcCredit__content {
+    max-width: 1600px;
+    width: 95%;
+    padding-top: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.main__container__calcCredit__section {
+    display: flex;    
+    gap: 30px;  
+    margin-bottom: 20px;
+    
+}
+.main__container__calcCredit__calculator {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: auto;    
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 30px;
+    background: var(--gradientBlue);    
+    padding: 20px;
+    margin-top: 30px;
+    color: var(--whiteBlue);
+}
+.main__container__calcCredit__result {  
+    
+}
+
+.main__container__calcCredit__calculator__value {
+    height: 35px;
+    max-width: 400px;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.main__container__calcCredit__calculator__select {
+    height: 35px;
+}
+.main__container__calcCredit__calculator__error {
+    color: var(--red);
+}
+.main__container__calcCredit__calculator__button {
+    width: 100%;
+    height: 35px;
+    background-color: var(--whiteBlue);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color .5s linear;
+}
+.main__container__calcCredit__calculator__button:hover {
+    background-color: var(--darkBlue);
+    color: var(--lightBlue);
+    outline: 1px solid var(--whiteBlue);
+}
+.main__container__calcCredit__result__content_item {
+    margin-bottom: 20px;
+    padding-bottom:5px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.main__container__calcCredit__result__content_item__title {
+    margin-bottom: 10px
+}
+
+.main__container__title {    
+    margin-bottom: 20px;  
+    margin-top: 20px;   
+}
+.main__container__list {
+    list-style-type: none;
+}
+.main__container__calcCredit__description__article {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--lightBlue);
+    border-radius: 20px;
+    margin-top: 20px;
+    color:var(--whiteBlue);
+}
+.main__container__calcCredit__description__article__title {
+    color: var(--darkBlue);
+    padding-bottom: 20px;
+}
+
