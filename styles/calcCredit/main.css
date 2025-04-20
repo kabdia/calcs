@@ -51,7 +51,7 @@
     height: 35px;
 }
 .main__container__calcCredit__calculator__error {
-    color: var(--red);
+    color: var(--red);    
 }
 .main__container__calcCredit__calculator__button {
     width: 100%;

@@ -41,18 +41,36 @@
                     <div class="main__container__calcCredit__calculator" data-js-calculator>
                         <div>
                             <label>Сумма (рубли)</label><br><br>
-                            <input type="text" placeholder="Сумма" class="main__container__calcCredit__calculator__value">
-                            <span data-js-error></span>
+                            <input  
+                                type="text" 
+                                placeholder="Сумма" 
+                                value = "300 000"
+                                class="main__container__calcCredit__calculator__value"
+                                data-js-sumcurrent
+                            >
+                            <span class="main__container__calcCredit__calculator__error" data-js-error></span>
                         </div>
                         <div>
                             <label>Процентная ставка</label><br><br>
-                            <input type="text" placeholder="Ставка" class="main__container__calcCredit__calculator__value">
-                            <span data-js-error></span>
+                            <input 
+                                type="text" 
+                                placeholder="Ставка" 
+                                value = "8%"
+                                class="main__container__calcCredit__calculator__value"
+                                data-js-percent
+                            >
+                            <span class="main__container__calcCredit__calculator__error" data-js-error></span>
                         </div>
                         <div>
                             <label>Срок (в месяцах)</label><br><br>
-                            <input type="text" placeholder="Месяцы" class="main__container__calcCredit__calculator__value">
-                            <span data-js-error></span>
+                            <input 
+                                type="text" 
+                                placeholder="Месяцы" 
+                                value = "12"
+                                class="main__container__calcCredit__calculator__value"
+                                data-js-month
+                            >
+                            <span class="main__container__calcCredit__calculator__error" data-js-error></span>
                         </div>                               
                           <div>Округлить до скольки знаков после запятой?</div>    
                           <div>
@@ -77,15 +95,15 @@
                         <div class="main__container__calcCredit__result__content">
                             <div class="main__container__calcCredit__result__content_item">
                                 <h3 class="main__container__calcCredit__result__content_item__title">Ежемесячный платеж</h3>
-                                <span>1000</span>
+                                <span data-js-monthpay>26 097</span>
                             </div>
                             <div class="main__container__calcCredit__result__content_item">
                                 <h3 class="main__container__calcCredit__result__content_item__title">Сумма переплат</h3>
-                                <span>1000</span>
+                                <span data-js-overpay>13 158</span>
                             </div>
                             <div class="main__container__calcCredit__result__content_item">
                                 <h3 class="main__container__calcCredit__result__content_item__title">Общая сумма</h3>
-                                <span>1000</span>
+                                <span data-js-ressum>313 158</span>
                             </div>
                         </div>                        
                         <div class="main__container__calcCredit__result__content_chart">
