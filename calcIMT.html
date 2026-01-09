@@ -36,36 +36,29 @@
     <main>
         <div class="main__container__calcMass">
             <div class="main__container__calcMass__content">
-                <h3 class="main__container__calcMass__title">Конвертер массы</h3>
+                <h3 class="main__container__calcMass__title">Расчет индекса массы тела (ИМТ)</h3>
                 <div class="main__container__calcMass__section">
                     <div class="main__container__calcMass__calculator" data-js-calculator>
-                        <p>Перевести</p>
-                        <input 
-                            type="text"
-                            value="1"
-                            data-js-value
-                        />
-                        <div data-js-error></div>
-                        <select name="fromUnit" class="main__container__calcMass__calculator__select" data-js-selectFrom>
-                          <option value="kg">Килограмм</option>
-                          <option value="mg">Миллиграмм</option>
-                          <option value="tn">Тонна</option>
-                          <option value="zn">Центнер</option>
-                          <option value="gr">Грамм</option>
-                          <option value="uzn">Унция</option>
-                        </select>
-                        <select name="toUnit" class="main__container__calcMass__calculator__select" data-js-selectTo>                          
-                          <option value="mg">Миллиграмм</option>
-                          <option value="kg">Килограмм</option>
-                          <option value="tn">Тонна</option>
-                          <option value="zn">Центнер</option>
-                          <option value="gr">Грамм</option>
-                          <option value="uzn">Унция</option>
-                        </select>
-                        <button data-js-res>Конвертация</button>               
-                <div class="main__container__calcPercent__result">
-                        <div class="main__container__calcPercent__result__title">Результат:&#20<span data-js-result></span></div>
-                </div>                       
+                        <p>Введите данные</p>
+                        
+                            <label>Пол</label>
+                            <select data-js-value-person>
+                                <option value="woman">Женщина</option>
+                                <option value="man">Мужчина</option>
+                            </select>
+                            <label>Рост</label>
+                            <input type="text" data-js-value-height></input>
+                            <div data-js-error></div>
+                            <label>Вес</label>
+                            <input type="text" data-js-value-weight></input>
+                            <div data-js-error></div>
+                            <button data-js-btn>Рассчитать</button>
+                            <div><p>Результат:</p>
+                                <span data-js-result></span>
+                                <span data-js-result-status></span></div>
+                            </div>
+                        
+                                       
                 <div class="main__container__calcPercent__description">              
                                       
                 </div>
@@ -93,7 +86,7 @@
             </nav>
         </div>
     </div>
-    <script src="./scripts/converters/calcMass.js"></script> 
+    <script src="./scripts/calcHealth/calcIMT.js"></script> 
     <script src="./scripts/openCloseMenu.js"></script>   
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>

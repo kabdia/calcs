@@ -1,4 +1,4 @@
-class CalcMass {
+class CalcLength {
     constructor(instance) {
         this.instance = instance;
 
@@ -6,32 +6,32 @@ class CalcMass {
             return
         }   
 
-        this.selectFrom = document.querySelector(InteractiveCalculatorMassCollection.selectors.selectFrom);    
+        this.selectFrom = document.querySelector(InteractiveCalculatorLengthCollection.selectors.selectFrom);    
         if (!this.selectFrom) {
           return
         }
 
-        this.selectTo = document.querySelector(InteractiveCalculatorMassCollection.selectors.selectTo);
+        this.selectTo = document.querySelector(InteractiveCalculatorLengthCollection.selectors.selectTo);
         if (!this.selectTo) {
           return
         }
 
-        this.btnRes = document.querySelector(InteractiveCalculatorMassCollection.selectors.btnRes);
+        this.btnRes = document.querySelector(InteractiveCalculatorLengthCollection.selectors.btnRes);
         if (!this.btnRes) {
           return
         }
 
-        this.initValue = document.querySelector(InteractiveCalculatorMassCollection.selectors.initValue);
+        this.initValue = document.querySelector(InteractiveCalculatorLengthCollection.selectors.initValue);
         if (!this.initValue) {
           return
         }
 
-        this.result = document.querySelector(InteractiveCalculatorMassCollection.selectors.result);
+        this.result = document.querySelector(InteractiveCalculatorLengthCollection.selectors.result);
         if (!this.result) {
             return
         }
 
-        this.error = document.querySelector(InteractiveCalculatorMassCollection.selectors.error);
+        this.error = document.querySelector(InteractiveCalculatorLengthCollection.selectors.error);
         if (!this.error) {
             return
         }
@@ -45,21 +45,20 @@ class CalcMass {
     }
     
     convert() {
-        //Основная ед. - кг
+        //Основная ед. - метр
         const objValues = {
-            "kg": 1,
-            "mg": 1000000,
-            "tn": 0.001,
-            "zn": 0.01,
-            "gr": 1000,
-            "uzn": 35.273962,
+            "m": 1,
+            "mm": 1000,
+            "sm": 100,
+            "dm": 10,
+            "km": 0.001,            
         }
 
-        //Конвертируем в кг
+        //Конвертируем в м
         if (this.error.innerHTML == '') {
-            const value = this.initValue.value.replaceAll(' ', '')
-            const valueInKg = Number(value) / objValues[this.selectFrom.value];
-            const result = valueInKg * objValues[this.selectTo.value]; 
+            const value = this.initValue.value.replaceAll(' ', '');         
+            const valueInM = Number(value) / objValues[this.selectFrom.value];           
+            const result = valueInM * objValues[this.selectTo.value];             
             this.writeResult(result);  
         } else {
             return
@@ -84,7 +83,7 @@ class CalcMass {
     
 }
 
-class InteractiveCalculatorMassCollection {
+class InteractiveCalculatorLengthCollection {
     static selectors = {              
         instance: "[data-js-calculator]",
         selectFrom: "[data-js-selectFrom]",
@@ -95,13 +94,13 @@ class InteractiveCalculatorMassCollection {
         error: "[data-js-error]"
     }
     constructor() {
-        document.querySelectorAll(InteractiveCalculatorMassCollection.selectors.instance).forEach(node => {
-            new CalcMass(node);
+        document.querySelectorAll(InteractiveCalculatorLengthCollection.selectors.instance).forEach(node => {
+            new CalcLength(node);
         });
     }
 }
 
 window.App = {};
 document.addEventListener('DOMContentLoaded', () => {
-    App.InteractiveCalculatorCollection = new InteractiveCalculatorMassCollection();
+    App.InteractiveCalculatorCollection = new InteractiveCalculatorLengthCollection();
 });
