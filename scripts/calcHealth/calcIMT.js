@@ -52,48 +52,47 @@ class CalcIMT {
     
     getCalculation() {
         const height = this.valueHeight.value;
-        const weight = this.valueWeight.value;        
-
-        const res = +weight / Math.pow(+height, 2)
+        const weight = this.valueWeight.value;
+        const res = +weight / Math.pow((+height/100), 2);
+        console.debug(res);
         return res.toFixed(2);
 
     }
-    getResult() {
-        console.debug('+')
+    getResult() {        
         const index = this.getCalculation();
-        const person = this.selectPerson.value;
-        console.log(index, person)
+        const person = this.selectPerson.value;        
         if (person === 'woman') {
             if (index < 19) {                
-                this.setResult('Недостаточный вес');
+                this.setResult('Недостаточный вес', index);
             } else if (index >=19 && index<24) {
-                this.setResult('Нормальный вес');              
-            } else if (index >= 24 && index <30) {
-                
-                this.setResult('Незначительный избыток веса');                  
+                this.setResult('Нормальный вес', index);              
+            } else if (index >= 24 && index <30) {                
+                this.setResult('Незначительный избыток веса', index);                  
             } else if (index >= 30 && index <40) {                
-                this.setResult('Склонность к ожирению');
+                this.setResult('Склонность к ожирению', index);
             } else if (index >= 40) {
-                this.setResult('Сильное ожирение');               
+                this.setResult('Сильное ожирение', index);               
             }
         }
         if (person === 'man') {
             if (index < 20) {
-                this.setResult('Недостаточный вес');
+                this.setResult('Недостаточный вес', index);
             } else if (index >=20 && index<25) {
-                this.setResult('Нормальный вес');
+                this.setResult('Нормальный вес', index);
             } else if (index >= 25 && index <30) {
-                this.setResult('Незначительный избыток веса');
+                this.setResult('Незначительный избыток веса', index);
             } else if (index >= 30 && index <40) {
-                this.setResult('Склонность к ожирению');
+                this.setResult('Склонность к ожирению', index);
             } else if (index >= 40) {
-                this.setResult('Сильное ожирение'); 
+                this.setResult('Сильное ожирение', index); 
             }
         }
     }
-    setResult(value) {
+    setResult(value, index) {
         this.valueResStatus.innerHTML = '';
+        this.valueRes.innerHTML = '',
         this.valueResStatus.innerHTML = value;
+        this.valueRes.innerHTML = index;
     }
     validation() {
         this.initValue.addEventListener('input', () => {            

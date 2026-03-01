@@ -8,8 +8,7 @@
 .header__container__content {
     max-width: 1600px;
     width: 95%;
-    display: flex;
-    justify-content:space-between;
+    display: flex;    
     align-items: center;
 }
 
@@ -17,6 +16,9 @@
     display: flex;
     gap:8px;
     align-items: center;
+}
+.title__img {
+    width: 40px;
 }
 .title__container_name {
     color: #3432C4;
