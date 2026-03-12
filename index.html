@@ -18,20 +18,49 @@
             <div class="header__container__content">
                 <div class="header__container__title">
                     <div class="title__container">
-                        <img src="./img/calc.png" alt="calc">
-                        <h2 class="title__container_name">calculator-info</h2>
-                    </div>
-                </div>
-                <div class="header__container__menu">                    
-                    <div class="container__menu__burger" data-js-open-menu>                        
-                        <div class="burger"></div>
-                        <div class="burger"></div>
-                        <div class="burger"></div>
-                    </div>
-                </div>
+                        <img class="title__img" src="./img/calc.png" alt="calc">
+                        <h2 class="title__container_name">calculator-info</h2>                        
+                    </div>                    
+                </div>                
             </div>
         </div>
     </header>
+    <menu>
+        <div class="menu__container">
+            <div class="menu__container__content">       
+                <div class="menu__title">
+                    <h3 class="title__style">математические калькуляторы</h3>
+                    <ul class="menu__part">
+                        <li>калькулятор %</li>
+                        <li>калькулятор НОК</li>
+                        <li>калькулятор НОД</li>
+                    </ul>
+                </div> 
+            
+            <div class="menu__title">
+                <h3 class="title__style">финансовые калькуляторы</h3>
+                <ul class="menu__part">
+                    <li>кредитный калькулятор</li>                                        
+                </ul>
+            </div>
+            <div class="menu__title">
+                <h3 class="title__style">конвертеры единиц измерения</h3>
+                <ul class="menu__part">
+                    <li>конвертер массы</li>  
+                    <li>конвертер длины</li>                                       
+                </ul>
+            </div>
+            <div class="menu__title">
+                <h3 class="title__style">калькуляторы для здоровья</h3>
+                <ul class="menu__part">
+                    <li>калькулятор индекса массы тела (ИМТ)</li>                                                                             
+                </ul>
+            </div>
+        </div> 
+        </div>
+        </div>   
+        </div>  
+    </menu>
     <main>
         <div class="main__container__content">
             <div class="container__content__description">
@@ -67,20 +96,17 @@
                     <ul>
                         <li class="container__content__navigation__item__link">
                             <a href="./creditCalc.html" class="container__content__navigation__item__link_style">Кредитный калькулятор</a>
-                        </li>
-                        <li class="container__content__navigation__item__link">
-                            <a href="#" class="container__content__navigation__item__link_style">Ипотечный калькулятор</a>
-                        </li>                        
+                        </li>                                               
                     </ul>
                 </div>
                 <div class="container__content__navigation__item">
                     <h3 class="container__content__navigation__item__title">Конвертеры единиц измерения</h3>
                     <ul>
                         <li class="container__content__navigation__item__link">
-                            <a href="#" class="container__content__navigation__item__link_style">Конвертер массы</a>
+                            <a href="./calcMass.html" class="container__content__navigation__item__link_style">Конвертер массы</a>
                         </li>
                         <li class="container__content__navigation__item__link">
-                            <a href="#" class="container__content__navigation__item__link_style">Конвертер длины</a>
+                            <a href="./calcLength.html" class="container__content__navigation__item__link_style">Конвертер длины</a>
                         </li>                        
                     </ul>
                 </div>
@@ -88,18 +114,12 @@
                     <h3 class="container__content__navigation__item__title">Калькуляторы для здоровья</h3>
                     <ul>
                         <li class="container__content__navigation__item__link">
-                            <a href="#" class="container__content__navigation__item__link_style">Калькулятор индекса массы тела (ИМТ)</a>
+                            <a href="./calcIMT.html" class="container__content__navigation__item__link_style">Калькулятор индекса массы тела (ИМТ)</a>
                         </li>
-                        <li class="container__content__navigation__item__link">
-                            <a href="#" class="container__content__navigation__item__link_style">Калькулятор веса</a>
-                        </li>                        
+                                             
                     </ul>
                 </div>
-            </div>
-          <!--  <div class="container__content__calculator">
-                <h2 class="content__calculator_title">Калькулятор для стандартных вычислений</h2>
-                <div class="content__calculator_instance" data-js-calculator></div>
-            </div> -->
+            </div>          
         </div>
     </main>
     <footer>
@@ -107,22 +127,7 @@
             <p>© calculator-info.ru, 2025. Все права защищены</p>
         </div>
     </footer>
-    <div class="menu__container" data-js-menu> 
-        <div class="menu__close" data-js-close-menu>
-            <img src="./img/close.png" alt="close">
-        </div>
-        <div class="menu__list">
-            <p class="menu__list__title">Каталог онлайн калькуляторов</p>
-            <nav class="menu__list__item">
-                <ul class="list__item">
-                    <li class="list__item__calc">Математические</li>
-                    <li class="list__item__calc">Финансовые</li>
-                    <li class="list__item__calc">Конвертеры единиц измерения</li>
-                    <li class="list__item__calc">Дата и время</li>
-                </ul>
-            </nav>
-        </div>
-    </div>
+    
    <!-- <script src="./scripts/calculatorMain.js"></script> -->
     <script src="./scripts/openCloseMenu.js"></script>   
 </body>

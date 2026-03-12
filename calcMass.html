@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/config.css">
+    <link rel="stylesheet" href="./styles/font.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/calcMass/main.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/menu.css"> 
+    <title>Конвертер массы</title>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <div class="header__container__content">
+                <div class="header__container__title">
+                    <div class="title__container">
+                        <img class="title__img" src="./img/calc.png" alt="calc">
+                        <h2 class="title__container_name">
+                            <a href="index.html">calculator-info</a>
+                        </h2>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main__container__calcMass">
+            <div class="main__container__calcMass__content">
+                <h3 class="main__container__calcMass__title">Конвертер массы</h3>
+                <div class="main__container__calcMass__section">
+                    <div class="main__container__calcMass__calculator" data-js-calculator>
+                        <p>Перевести</p>
+                        <input 
+                            type="text"
+                            value="1"
+                            data-js-value
+                        />
+                        <div data-js-error></div>
+                        <select name="fromUnit" class="main__container__calcMass__calculator__select" data-js-selectFrom>
+                          <option value="kg">Килограмм</option>
+                          <option value="mg">Миллиграмм</option>
+                          <option value="tn">Тонна</option>
+                          <option value="zn">Центнер</option>
+                          <option value="gr">Грамм</option>
+                          <option value="uzn">Унция</option>
+                        </select>
+                        <select name="toUnit" class="main__container__calcMass__calculator__select" data-js-selectTo>                          
+                          <option value="mg">Миллиграмм</option>
+                          <option value="kg">Килограмм</option>
+                          <option value="tn">Тонна</option>
+                          <option value="zn">Центнер</option>
+                          <option value="gr">Грамм</option>
+                          <option value="uzn">Унция</option>
+                        </select>
+                        <button data-js-res>Конвертация</button>               
+                <div class="main__container__calcPercent__result">
+                        <div class="main__container__calcPercent__result__title">
+                        Результат:&#20
+                        <span data-js-result-status></span>
+                        <span data-js-result></span>
+                    </div>
+                </div>                       
+                <div class="main__container__calcPercent__description">              
+                                      
+                </div>
+            </div>
+        </div>        
+    </main>
+    <footer>
+        <div class="footer__container">
+            <p>© calculator-info.ru, 2025. Все права защищены</p>
+        </div>
+    </footer>
+    
+    <script src="./scripts/converters/calcMass.js"></script> 
+    <script src="./scripts/openCloseMenu.js"></script>   
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
