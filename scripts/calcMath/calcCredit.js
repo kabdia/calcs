@@ -150,7 +150,6 @@ class CalcCredit {
   }           
 }
 
-
 class InteractiveCalculatorCreditCollection {
     static selectors = {              
         instance: "[data-js-calculator]",
