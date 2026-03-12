@@ -24,15 +24,25 @@ class CalcPercent {
         if (!this.input2) {
             return
         }
+        
+        this.resultBlock = document.querySelector(InteractiveCalculatorPercentCollection.selectors.resultBlock);      
+       
+
         this.result = document.querySelector(InteractiveCalculatorPercentCollection.selectors.result);
         if (!this.result) {
             return
         }
+        
+        
         this.button = document.querySelector(InteractiveCalculatorPercentCollection.selectors.button);
         if (!this.button) {
             return
         }
         this.error = document.querySelector(InteractiveCalculatorPercentCollection.selectors.error);
+        if (!this.button) {
+            return
+        }
+        
         this.placeholders = {
             'type1': ['процент','от','числа'],
             'type2': ['число 1', 'от', 'число 2'],
@@ -67,15 +77,16 @@ class CalcPercent {
         this.input1.placeholder = words[0];
         this.span.innerHTML = words[1];
         this.input2.placeholder = words[2];        
-   }   
+   } 
+     
    doCalc() {
-    this.button.addEventListener('click', () => {
+    this.button.addEventListener('click', () => {              
+        this.resultBlock.addClass('main__container__calcPercent__result_show');           
         
-       
         const valueSelect = this.select.value;
         this.result.innerHTML = '';
         switch (valueSelect) {
-            case 'type1': {                     
+            case 'type1': {                      
                 const result = this.getPercentageOfNumber();
                 this.result.innerHTML = result.toFixed(this.numRound);
                 break;
@@ -107,7 +118,7 @@ class CalcPercent {
             }
         }
     });    
-   }
+   }   
    /* нахождение процента от числа*/ 
    getPercentageOfNumber() {    
         const percent = this.input1.value;
@@ -167,6 +178,9 @@ class CalcPercent {
         });
     }    
 }
+  showResultBlock() {
+        
+}  
 }
 
 class InteractiveCalculatorPercentCollection {
@@ -177,6 +191,7 @@ class InteractiveCalculatorPercentCollection {
         select: "[data-js-select]",
         selectRound: "[data-js-round]",
         span: "[data-js-span]",
+        resultBlock: "[js-result-block]",
         result: "[data-js-result]",
         button: "[data-js-calcpercent]",
         error: "[data-js-error]",

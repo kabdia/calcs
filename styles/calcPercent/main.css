@@ -36,7 +36,12 @@
     width: 300px;
     padding: 20px;
     color: var(--whiteBlue);
+    visibility: hidden;
 }
+.main__container__calcPercent__result_show {
+    visibility: visible;
+}
+
 .main__container__calcPercent__calculator__select {
     height: 35px;
 }

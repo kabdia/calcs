@@ -47,6 +47,7 @@
     grid-template-columns: 1fr ;
     margin-top: 40px;
     padding: 20px;
+    padding-left: 0;
     /*background-color: var(--lightBlue);*/
     border-radius: 20px;    
 }
