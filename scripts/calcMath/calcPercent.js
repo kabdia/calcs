@@ -4,6 +4,12 @@ class CalcPercent {
         if (!this.instance) {
             return
         }
+        
+        this.container = document.querySelector(InteractiveCalculatorPercentCollection.selectors.container);
+        if (!this.container) {
+            return
+        }
+        
         this.select =  document.querySelector(InteractiveCalculatorPercentCollection.selectors.select);
         if (!this.select) {
             return
@@ -25,40 +31,46 @@ class CalcPercent {
             return
         }
         
-        this.resultBlock = document.querySelector(InteractiveCalculatorPercentCollection.selectors.resultBlock);      
-       
+        //this.resultBlock = document.querySelector(InteractiveCalculatorPercentCollection.selectors.resultBlock);      
 
-        this.result = document.querySelector(InteractiveCalculatorPercentCollection.selectors.result);
-        if (!this.result) {
-            return
-        }
-        
+        //this.result = document.querySelector(InteractiveCalculatorPercentCollection.selectors.result);       
         
         this.button = document.querySelector(InteractiveCalculatorPercentCollection.selectors.button);
         if (!this.button) {
             return
         }
         this.error = document.querySelector(InteractiveCalculatorPercentCollection.selectors.error);
-        if (!this.button) {
+        if (!this.error) {
             return
         }
         
         this.placeholders = {
-            'type1': ['процент','от','числа'],
-            'type2': ['число 1', 'от', 'число 2'],
-            'type3': ['число', '+', 'процент'],
-            'type4': ['число', '-', 'процент'],
-            'type5': ['число 1','>','число 2'],
-            'type6': ['число 1','<','число 2'],
+            'percentageOfNumber': ['процент','от','числа'],
+            'percentageOfNumberFromNumber': ['число 1', 'от', 'число 2'],
+            'percentageAddNumber': ['число', '+', 'процент'],
+            'percentageMinusNumber': ['число', '-', 'процент'],
+            'percentageMore': ['число 1','>','число 2'],
+            'percentageLess': ['число 1','<','число 2'],
+        }
+        this.formuls = {
+            'percentageOfNumber': (number, percent) => (number * percent) / 100,
+            'percentageOfNumberFromNumber': (number, percent) => (number / percent) * 100,
+            'percentageAddNumber': (number, percent) => number * (1 + (percent / 100)),
+            'percentageMinusNumber': (number, percent) => number * (1 - (percent / 100)),
+            'percentageMore': (number, percent) => (number / percent) * 100 - 100,
+            'percentageLess': (number, percent) => 100 - (number / percent * 100),
         }
         this.numRound = 0;
+        this.createdResult = false;
         this.init(); 
+        
     }
-   init() {         
+   init() {            
         this.doChoice();
         this.doCalc();
         this.numRound = this.setNumRoundResult();
-        this.validationInput(this.input1, this.input2);        
+        this.validationInput(this.input1, this.input2);    
+        
    }
    doChoice() {
         this.select.addEventListener('change', (e) => {            
@@ -81,14 +93,20 @@ class CalcPercent {
      
    doCalc() {
     this.button.addEventListener('click', () => {              
-        this.resultBlock.addClass('main__container__calcPercent__result_show');           
-        
+        //просматриваем выбранный селект       
         const valueSelect = this.select.value;
-        this.result.innerHTML = '';
-        switch (valueSelect) {
+        console.log(valueSelect);
+        const percent = this.input1.value;
+        const number = this.input2.value; 
+
+        const result = this.formuls[valueSelect](percent, number);
+        this.showResultBlock(result); 
+
+       // this.result.innerHTML = '';
+       /* switch (valueSelect) {
             case 'type1': {                      
                 const result = this.getPercentageOfNumber();
-                this.result.innerHTML = result.toFixed(this.numRound);
+                this.showResultBlock(result);                 
                 break;
             }
             case 'type2': {
@@ -116,7 +134,7 @@ class CalcPercent {
                 this.result.innerHTML = `${result.toFixed(this.numRound)}%`;
                 break;
             }
-        }
+        }*/
     });    
    }   
    /* нахождение процента от числа*/ 
@@ -176,23 +194,52 @@ class CalcPercent {
                 this.button.disabled = false;            
             }
         });
-    }    
-}
-  showResultBlock() {
-        
-}  
+      }    
+    }
+  showResultBlock(result) {
+        if (!this.createdResult) {
+            const blockRes = document.createElement('div');
+            blockRes.className = 'main__container__calcPercent__result';
+            blockRes.setAttribute('data-js-block-res', "");
+            this.container.appendChild(blockRes);       
+
+            const blockResTotal = document.createElement('div');
+            blockResTotal.className = 'main__container__calcPercent__result__title';
+            blockRes.appendChild(blockResTotal);
+
+            const p = document.createElement('p');
+            p.textContent = 'Результат:';
+            blockResTotal.appendChild(p);
+
+            const span = document.createElement('span');
+            span.setAttribute('data-js-result', "");
+            span.textContent = result.toFixed(this.numRound)
+            blockResTotal.appendChild(span);
+
+            this.createdResult = true;
+        } else {                            
+            const span = this.getSpanRes()           
+            span.textContent = result.toFixed(this.numRound)
+        }                    
+    }  
+
+    getSpanRes() {
+        return document.querySelector('[data-js-result]');
+    }
+    getBlockRes() {
+        return document.querySelector('[data-js-block-res]');
+    }
 }
 
 class InteractiveCalculatorPercentCollection {
-    static selectors = {              
+    static selectors = {               
         instance: "[data-js-calculator]",
+        container: "[data-js-container]",
         input1: "[data-js-input1]",
         input2: "[data-js-input2]",
         select: "[data-js-select]",
         selectRound: "[data-js-round]",
-        span: "[data-js-span]",
-        resultBlock: "[js-result-block]",
-        result: "[data-js-result]",
+        span: "[data-js-span]",        
         button: "[data-js-calcpercent]",
         error: "[data-js-error]",
     }

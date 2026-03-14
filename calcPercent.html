@@ -64,15 +64,15 @@
         <div class="main__container__calcPercent">
             <div class="main__container__calcPercent__content">
                 <h3 class="main__container__calcPercent__title">Калькулятор процентов</h3>
-                <div class="main__container__calcPercent__section">
+                <div class="main__container__calcPercent__section" data-js-container>
                     <div class="main__container__calcPercent__calculator" data-js-calculator>
                         <select name="percentage" class="main__container__calcPercent__calculator__select" data-js-select>
-                          <option value="type1">Нахождение процента от числа</option>
-                          <option value="type2">Нахождение процентов числа от числа</option>
-                          <option value="type3">Увеличение числа на процент</option>
-                          <option value="type4">Уменьшение числа на процент</option>
-                          <option value="type5">На сколько процентов одно число больше другого</option>
-                          <option value="type6">На сколько процентов одно число меньше другого</option>
+                          <option value="percentageOfNumber">Нахождение процента от числа</option>
+                          <option value="percentageOfNumberFromNumber">Нахождение процентов числа от числа</option>
+                          <option value="percentageAddNumber">Увеличение числа на процент</option>
+                          <option value="percentageMinusNumber">Уменьшение числа на процент</option>
+                          <option value="percentageMore">На сколько процентов одно число больше другого</option>
+                          <option value="percentageLess">На сколько процентов одно число меньше другого</option>
                         </select>
                         <p>Введите значения</p> 
                         <div class="main__container__calcPercent__calculator__inputs">
@@ -97,20 +97,15 @@
                                   <option value="2">2</option>
                                   <option value="3">3</option>
                                   <option value="4">4</option>
-                                  <option value="5">5</option>
-                                  <option value="6">6</option>
-                                  <option value="7">7</option>
-                                  <option value="8">8</option>
-                                  <option value="9">9</option>
-                                  <option value="10">10</option>
+                                  <option value="5">5</option>                                  
                               </select>
                           </div>
                           <button class="main__container__calcPercent__calculator__button" data-js-calcpercent>Вычислить процент</button>     
                           
                       </div>
-                      <div class="main__container__calcPercent__result" data-js-result-block>
+                    <!--<div class="main__container__calcPercent__result" data-js-result-block>
                         <div class="main__container__calcPercent__result__title">Результат:&#20<span data-js-result></span></div>
-                      </div>
+                      </div>-->
                 </div>
                 
                 <div class="main__container__calcPercent__description">  
