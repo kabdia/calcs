@@ -29,11 +29,7 @@ class CalcPercent {
         this.input2 = document.querySelector(InteractiveCalculatorPercentCollection.selectors.input2);
         if (!this.input2) {
             return
-        }
-        
-        //this.resultBlock = document.querySelector(InteractiveCalculatorPercentCollection.selectors.resultBlock);      
-
-        //this.result = document.querySelector(InteractiveCalculatorPercentCollection.selectors.result);       
+        }            
         
         this.button = document.querySelector(InteractiveCalculatorPercentCollection.selectors.button);
         if (!this.button) {
@@ -75,8 +71,8 @@ class CalcPercent {
    doChoice() {
         this.select.addEventListener('change', (e) => {            
             const value = e.target.value;     
-            this.writePlaceholder(value);    
-            this.result.innerHTML = '';
+            this.writePlaceholder(value);  
+            this.hiddenBlockRes();          
             this.selectRound.value = 0;        
         });        
    }
@@ -94,93 +90,21 @@ class CalcPercent {
    doCalc() {
     this.button.addEventListener('click', () => {              
         //просматриваем выбранный селект       
-        const valueSelect = this.select.value;
-        console.log(valueSelect);
+        const valueSelect = this.select.value;        
         const percent = this.input1.value;
         const number = this.input2.value; 
 
         const result = this.formuls[valueSelect](percent, number);
         this.showResultBlock(result); 
-
-       // this.result.innerHTML = '';
-       /* switch (valueSelect) {
-            case 'type1': {                      
-                const result = this.getPercentageOfNumber();
-                this.showResultBlock(result);                 
-                break;
-            }
-            case 'type2': {
-                const result = this.getPercentageOfNumberFromNumber();
-                this.result.innerHTML = `${result.toFixed(this.numRound)}%`;
-                break;
-            }
-            case 'type3': {
-                const result = this.getPercentageAddNumber();
-                this.result.innerHTML = result.toFixed(this.numRound);
-                break;
-            }
-            case 'type4': {
-                const result = this.getPercentageMinusNumber();
-                this.result.innerHTML = result.toFixed(this.numRound);
-                break;               
-            }
-            case 'type5': {
-                const result = this.getPercentageMore();
-                this.result.innerHTML = `${result.toFixed(this.numRound)}%`;
-                break;
-            }
-            case 'type6': {
-                const result = this.getPercentageLess();
-                this.result.innerHTML = `${result.toFixed(this.numRound)}%`;
-                break;
-            }
-        }*/
     });    
    }   
-   /* нахождение процента от числа*/ 
-   getPercentageOfNumber() {    
-        const percent = this.input1.value;
-        const number = this.input2.value;        
-        return (number * percent) / 100;
-   }
-   /*нахождение процента числа от числа*/
-   getPercentageOfNumberFromNumber() {        
-        const number1 = this.input1.value;
-        const number2 = this.input2.value;        
-        return (number1 / number2) * 100;
-   }
-   /*Добавить процент к числу*/
-   getPercentageAddNumber() {
-        const number = this.input1.value;
-        const percent = this.input2.value;
-        return number * (1 + (percent / 100));
-   }
-   /*Вычесть из числа процент*/
-   getPercentageMinusNumber() {
-        const number = this.input1.value;
-        const percent = this.input2.value;
-        return number * (1 - (percent / 100));
-    }
-    /*насколько процентов одно число больше другого*/
-    getPercentageMore() {
-        const number1 = this.input1.value;
-        const number2 = this.input2.value;
-        return (number1/number2) * 100 - 100;
-    }
-    /*насколько процентов одно число меньше другого*/
-    getPercentageLess() {
-        const number1 = this.input1.value;
-        const number2 = this.input2.value;
-        return 100 - (number1/number2 * 100);
-    }
-    setNumRoundResult() {
+   setNumRoundResult() {
     this.selectRound.addEventListener('change', (e) => {
         this.numRound = e.target.value;
         return e.target.value;        
     });    
    }
-   validationInput(input1, input2) {
-    
+   validationInput(input1, input2) {    
     const inputs = [input1, input2];
     for (const input of inputs) {
         input.addEventListener('input', () => {
@@ -199,9 +123,13 @@ class CalcPercent {
   showResultBlock(result) {
         if (!this.createdResult) {
             const blockRes = document.createElement('div');
-            blockRes.className = 'main__container__calcPercent__result';
+            blockRes.className = 'main__container__calcPercent__result';           
             blockRes.setAttribute('data-js-block-res', "");
-            this.container.appendChild(blockRes);       
+            this.container.appendChild(blockRes);    
+            requestAnimationFrame(() => {
+                blockRes.classList.add('main__container__calcPercent__result_show'); 
+            });
+              
 
             const blockResTotal = document.createElement('div');
             blockResTotal.className = 'main__container__calcPercent__result__title';
@@ -222,7 +150,16 @@ class CalcPercent {
             span.textContent = result.toFixed(this.numRound)
         }                    
     }  
-
+    
+    hiddenBlockRes() {
+        const blockRes = this.getBlockRes();
+        if (blockRes !== null) {
+            blockRes.remove();
+            this.createdResult = false;
+            return
+        }
+        return
+    }
     getSpanRes() {
         return document.querySelector('[data-js-result]');
     }

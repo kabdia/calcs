@@ -7,6 +7,8 @@
 }
 .main__container__calcPercent__title {
     padding-bottom: 20px;
+    font-family: 'Amatic SC', sans-serif; 
+    font-size: 40px;
 }
 .main__container__calcPercent__content {
     max-width: 1600px;
@@ -30,16 +32,22 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.main__container__calcPercent__result {  
-    border-radius: 30px;
-    background: var(--gradientBlue);
+.main__container__calcPercent__result {   
+    border-radius: 30px;    
+    background: var(--whiteBlue);
     width: 300px;
     padding: 20px;
-    color: var(--whiteBlue);
-   /* visibility: hidden;*/
+    color: var(--blue);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-out;
+}
+.main__container__calcPercent__result span {
+    font-size: 3em;
 }
 .main__container__calcPercent__result_show {
-   /* visibility: visible;*/
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .main__container__calcPercent__calculator__select {
@@ -87,17 +95,24 @@
 .main__container__list {
     list-style-type: none;
 }
+.main__container__calcPercent__description {
+    background-image: url('note.jpg');
+    background-repeat: repeat;
+    background-size: 100%;    
+}
 .main__container__calcPercent__description__article {
     width: 100%;
-    padding: 20px;
-    background-color: var(--lightBlue);
-    border-radius: 20px;
+    padding: 20px;   
     margin-top: 20px;
-    color:var(--whiteBlue);
+    color:var(--black);    
+    font-size:23px;
+    background: var(--blueOpacity);
+    border-radius: 50px;
 }
 .main__container__calcPercent__description__article__title {
     color: var(--darkBlue);
-    padding-bottom: 20px;
+    padding-bottom: 20px;    
+    font-size: 33px;
 }
 
 @media screen and (max-width: 812px) {

@@ -16,6 +16,7 @@
     --red: #ff0000;
     --black: #000;
     --gray: #b1b3b1;
+    --blueOpacity: rgba(179, 215, 240, 0.25);
 }
 body {
     position: relative;
